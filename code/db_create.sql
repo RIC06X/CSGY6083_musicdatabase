@@ -20,7 +20,7 @@ create table Album_Artist_Map(
 
 create table Song(
   sid   varchar(128)    primary key,
-  album_id varchar(128),
+  album_id varchar(128) not null,
   name varchar(128) not null,
   duration_ms integer not null,
   release_date date not null,

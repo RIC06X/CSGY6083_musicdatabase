@@ -52,7 +52,8 @@ create table Rating(
    cid serial primary key,
    sid varchar(128),
    rating integer not null,
-   _time date
+   _time date,
+   foreign key (sid) references Song(sid)
 );
 
 

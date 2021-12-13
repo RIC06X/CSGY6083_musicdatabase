@@ -70,7 +70,6 @@ if artist:
     sql_all= f"select song.name, song.duration_ms, song.release_date from artist, song_artist_map, song where artist.aid = song_artist_map.aid and song_artist_map.sid = song.sid and artist.name = '{artist}'; "
     try:
         df = query_db(sql_all)
-        print(df)
         st.dataframe(df)
     except:
         st.write("Sorry! Something went wrong with your query, please try again.")
@@ -111,7 +110,6 @@ if artist_searched:
     """
     try:
         test1 = query_db(sql_find_information)
-        print(test1)
         st.dataframe(test1)
     except:
         st.write("Sorry! Something went wrong with your query, please try again.")
@@ -147,7 +145,6 @@ sql_playlist = "select pname from playlist;"
 select_duration = 500
 try:
     data_rows = query_db(sql_playlist)["pname"].tolist()
-    print(data_rows)
     select_data = st.selectbox("Choose a playlist", data_rows)
     select_duration  = st.slider('duration (second)', value=[0, 1000], step=10)
 except:

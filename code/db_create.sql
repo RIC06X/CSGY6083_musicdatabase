@@ -33,7 +33,7 @@ create table Song_Artist_Map(
     primary key (sid, aid),
     foreign key (aid) references Artist(aid),
     foreign key (sid) references Song(sid)
-)
+);
 
 create table _User
 (

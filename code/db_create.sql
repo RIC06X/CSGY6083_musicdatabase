@@ -12,7 +12,7 @@ create table Album(
 
 create table Album_Artist_Map(
    album_id varchar(128),
-   aid varchar(128)
+   aid varchar(128),
     primary key (aid, album_id),
     foreign key (aid) references Artist(aid),
     foreign key (album_id) references Album(album_id)

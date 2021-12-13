@@ -11,15 +11,21 @@ by Yanjie Xu and Hanqing Zhang
 ## Installation
 create table
 
-`psql -d $DatabaseName -a -f $PWD/code/db_create.sql`
+`cd CSGY6083_musicdatabase`
+
+`psql -d {DatabaseName} -a -f code/schema.sql`
 
 Insert values
 
-`bash /data/load_csv.sh`
+`cd data`
+
+`bash load_csv.sh`
 
 Run Streamlit 
 
-`streamlit run streamlit.py`
+`cd ../code`
+
+`streamlit run project.py`
 
 ## Data source
 - Spotify API
